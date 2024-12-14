@@ -6,8 +6,17 @@ const authorRoutes = require("./routes/authorRoutes");
 
 const app = express();
 
+const corsOptions = {
+  origin: ["http://localhost:3001", "https://your-frontend-domain.com"], // Allow specific origins
+  methods: ["GET"], // Allowed HTTP methods
+  allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+};
+
 //Enable CORS for all routes
-app.use(cors());
+app.use(cors(corsOptions));
+
+// Handle preflight requests
+app.options("*", cors(corsOptions));
 
 app.use(bodyParser.json());
 
