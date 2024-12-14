@@ -7,16 +7,11 @@ const authorRoutes = require("./routes/authorRoutes");
 const app = express();
 
 const corsOptions = {
-  origin: ["http://localhost:3001", "https://your-frontend-domain.com"], // Allow specific origins
-  methods: ["GET"], // Allowed HTTP methods
-  allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+  origin: ["http://localhost:5000"], // Allow specific origins
 };
 
 //Enable CORS for all routes
 app.use(cors(corsOptions));
-
-// Handle preflight requests
-app.options("*", cors(corsOptions));
 
 app.use(bodyParser.json());
 
@@ -26,6 +21,6 @@ app.use("/api/authors", authorRoutes);
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
-app.listen(3000, () => console.log("Server ready on port 3000."));
+app.listen(5000, () => console.log("Server ready on port 5000."));
 
 module.exports = app;
