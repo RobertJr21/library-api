@@ -7,7 +7,7 @@ const authorRoutes = require("./routes/authorRoutes");
 const app = express();
 
 //Enable CORS for all routes
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors());
 
 app.use(bodyParser.json());
 
