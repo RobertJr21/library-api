@@ -1,9 +1,13 @@
 const express = require("express");
+const cors = require("cors");
 const bodyParser = require("body-parser");
 const bookRoutes = require("./routes/bookRoutes");
 const authorRoutes = require("./routes/authorRoutes");
 
 const app = express();
+
+//Enable CORS for all routes
+app.use(cors());
 
 app.use(bodyParser.json());
 
