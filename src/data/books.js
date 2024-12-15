@@ -53,7 +53,7 @@ const books = [
     title: "And Then There Were None",
     authorId: 4,
     available: false,
-    image: "./public/images/book8.jpg",
+    image: "/public/images/book8.jpg",
   },
   {
     id: 9,
