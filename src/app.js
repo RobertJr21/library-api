@@ -6,6 +6,8 @@ const authorRoutes = require("./routes/authorRoutes");
 
 const app = express();
 
+app.use("/images", express.static("public/images"));
+
 //Enable CORS for all routes
 app.use(cors());
 
