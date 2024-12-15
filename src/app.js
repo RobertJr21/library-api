@@ -1,13 +1,10 @@
 const express = require("express");
-const path = require("path");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const bookRoutes = require("./routes/bookRoutes");
 const authorRoutes = require("./routes/authorRoutes");
 
 const app = express();
-
-app.use(express.static(path.join(__dirname, "../public")));
 
 //Enable CORS for all routes
 app.use(cors());
